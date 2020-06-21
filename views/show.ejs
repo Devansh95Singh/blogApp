@@ -1,0 +1,29 @@
+<%- include ('partials/header') %> 
+
+<div class="ui main text container segment">
+    <div class="main header"><%= foundBlog.title %> </div>
+    <div class="ui top attached segment">
+        <div class="item">
+            <img src="<%= foundBlog.image %> " alt="#">
+            <div class="content">
+                <span><%= foundBlog.created.toDateString() %> </span>
+            </div>
+            <div class="description">
+                <p><%- foundBlog.body %> </p>
+            </div>
+            <div class="extra">
+                <a class="ui floated basic violet button" href="/blogs/<%= foundBlog._id %>/edit ">
+                    Edit Blog
+                    <i class="right chevron icon"></i>
+                </a>
+
+            </div>
+            
+        </div>
+        <form class="ui form" method="Post" action="/blogs/<%= foundBlog._id %>?_method=Delete ">
+            <button class="ui inverted red button">Delete</button>
+        </form>
+    </div>
+</div>
+
+<%- include ('partials/footer') %> 
